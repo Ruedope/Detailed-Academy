@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Detailed Academy</title>
+    <link rel="stylesheet" href="homepage.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="mainNav">
+            <a href="login.php" class="logo">Detailed Academy</a>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="login.php" class="active">Home</a></li>
+                    <li><a href="login.php">Programs</a></li>
+                    <li><a href="login.php">Coaches</a></li>
+                    <li><a href="login.php">About Us</a></li>
+                    <li><a href="login.php">Register</a></li>
+                </ul>
+                <div class="user-dropdown">
+                    <img src="images/user.png" alt="User Icon" class="user-icon">
+                    <div class="dropdown-content">
+                        <?php if (isset($_SESSION['email'])): ?>
+                            <form action="logout.php" method="POST">
+                                <button type="submit" class="logout-button">Logout</button>
+                            </form>
+                        <?php else: ?>
+                            <form action="login.php" method="GET">
+                                <button type="submit" class="login-button">Login</button>
+                            </form>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userDropdown = document.querySelector('.user-dropdown');
+            const userIcon = document.querySelector('.user-icon');
+
+            if (userDropdown && userIcon) {
+                userIcon.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    userDropdown.classList.toggle('open');
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!userDropdown.contains(e.target)) {
+                        userDropdown.classList.remove('open');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <div class="section-1">
+        <h1 class="intro-text">Detailed Academy</h1>
+        <h2 class="sub-header">Master the Game, One Detail at a Time.</h2>
+        <p class="hero-desc">
+            At Detailed Academy, we train athletes to think, move, and play smarter. 
+            Our goal is to turn raw talent into refined skill through discipline, precision, and passion for basketball.
+        </p>
+        <a href="login.php" class="hero-button">Join the Academy</a>
+    </div>
+
+<section class="section-programs">
+  <h2 class="section-title">Our Training Programs</h2>
+
+  <div class="programs-container">
+
+    <div class="program-box">
+      <img src="C:\Users\RapRap\Documents\3rdyear\detailed\mhp.jpg" alt="Serious Hoopers Master Program" class="program-img">
+      <h3>Serious Hoopers Master Program</h3>
+      <p>Take your game to the next level with intense, skill-focused training for serious athletes who aspire to compete at the highest levels.</p>
+      <a href="#" class="view-button">Join Now</a>
+    </div>
+
+    <div class="program-box">
+      <img src="C:\Users\RapRap\Documents\3rdyear\detailed\bc.jpg" alt="Beginners Camp" class="program-img">
+      <h3>Beginners Camp</h3>
+      <p>Perfect for those new to the game. Learn basketball fundamentals, teamwork, and confidence in a supportive environment.</p>
+      <a href="#" class="view-button">Learn More</a>
+    </div>
+
+    <div class="program-box">
+      <img src="C:\Users\RapRap\Documents\3rdyear\detailed\ac.jpg" alt="Adult Camp" class="program-img">
+      <h3>Adult Camp</h3>
+      <p>Designed for adults looking to stay fit, sharpen their basketball skills, and enjoy competitive play with a professional touch.</p>
+      <a href="#" class="view-button">Register</a>
+    </div>
+
+    <div class="program-box">
+      <img src="C:\Users\RapRap\Documents\3rdyear\detailed\ec.jpg" alt="Elite Course" class="program-img">
+      <h3>Elite Course</h3>
+      <p>Exclusive high-intensity program for top-tier players. Personalized coaching and tactical drills to push your limits.</p>
+      <a href="#" class="view-button">Enroll Today</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS (unique class to avoid collisions) -->
+<section class="section-testimonials">
+  <h2 class="testimonials-title">Detailed Stories</h2>
+  <p class="testimonials-subtitle">
+    Hear from our athletes who grew their game with <span>Detailed Academy</span>.
+  </p>
+
+  <div class="testimonials-container">
+    <div class="testimonial-card">
+      <img src="images/player1.jpg" alt="Athlete 1" class="testimonial-img">
+      <p class="testimonial-text">
+        “Coach helped me turn my weaknesses into strengths. I made it to my varsity team this year!”
+      </p>
+      <h3 class="testimonial-name">- Miguel Santos</h3>
+      <p class="testimonial-role">High School Varsity Player</p>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="images/player2.jpg" alt="Athlete 2" class="testimonial-img">
+      <p class="testimonial-text">
+        “The Elite Program pushed me harder than ever. My shooting accuracy improved by 45%.”
+      </p>
+      <h3 class="testimonial-name">- Carlo Dela Cruz</h3>
+      <p class="testimonial-role">Elite Course Graduate</p>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="images/player3.jpg" alt="Athlete 3" class="testimonial-img">
+      <p class="testimonial-text">
+        “The Detailed Academy community motivates me daily — best training experience ever!”
+      </p>
+      <h3 class="testimonial-name">- Jayson Rivera</h3>
+      <p class="testimonial-role">Adult Camp Trainee</p>
+    </div>
+  </div>
+</section>
+
+    
+
+   <div class="section-3">
+  <div class="booking-container">
+    <div class="booking-content">
+      <h2 class="booking-title">Ready to Join the Program?</h2>
+      <p class="booking-desc">
+        Take your basketball skills to the next level with <strong>Detailed Academy</strong>.
+        Whether you're a beginner or aiming for elite status — your journey starts here.
+      </p>
+      <div class="booking-buttons">
+        <a href="login.php" class="booking-button">Join Now</a>
+        <p class="no-account-text">Don't have an account yet?</p>
+        <a href="login.php" class="booking-create-account">Create Account</a>
+      </div>
+    </div>
+
+    <div class="booking-slideshow">
+      <div class="slide active" style="background-image: url('s3.jpg');"></div>
+      <div class="slide" style="background-image: url('s2.jpg');"></div>
+      <div class="slide" style="background-image: url('s1.jpg');"></div> 
+      <div class="slideshow-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let current = 0;
+let timer = setInterval(nextSlide, 4000);
+
+function showSlide(index) {
+  slides.forEach((s, i) => {
+    s.classList.toggle('active', i === index);
+    dots[i].classList.toggle('active', i === index);
+  });
+  current = index;
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    showSlide(i);
+    clearInterval(timer);
+    timer = setInterval(nextSlide, 4000);
+  });
+});
+
+showSlide(0);
+</script>
+
+
+<div class="section-4">
+  <div class="about-container">
+    <h2 class="about-title">DETAILED ACADEMY</h2>
+    <div class="about-details-container">
+      <p class="about-details">2025 Intramuros, Manila</p>
+      <p class="about-details">+63 (0)9123456789</p>
+      <p class="about-details">detailedacademy@gmail.com</p>
+    </div>
+    <div class="divider"></div>
+    <a href="login.php" class="about-link">Learn more about us</a>
+    <p class="footer-text">&copy; 2025 Detailed Academy. All rights reserved.</p>
+  </div>
+</div>
+
