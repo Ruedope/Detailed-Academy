@@ -1,10 +1,3 @@
-/* ================================
-   COACHES PAGE STYLING
-   Simple dark premium theme
-   Matches homepage design
-================================ */
-
-/* Page wrapper */
 .page-coaches {
   font-family: 'Roboto', sans-serif;
   background: #121212;
@@ -12,9 +5,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* --------------------------------
-   HERO (Simple dark + textured gradient)
------------------------------------ */
 .page-coaches .coaches-hero {
   padding: 90px 20px 60px;
   text-align: center;
@@ -43,9 +33,6 @@
   line-height: 1.6;
 }
 
-/* --------------------------------
-   COACH CATEGORY
------------------------------------ */
 .category {
   margin: 50px auto;
   padding: 0 16px;
@@ -61,9 +48,6 @@
   letter-spacing: 0.5px;
 }
 
-/* --------------------------------
-   COACH GRID — CENTERED & RESPONSIVE
------------------------------------ */
 .coaches-grid {
   display: grid;
   gap: 32px;
@@ -71,9 +55,6 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-/* --------------------------------
-   COACH CARD
------------------------------------ */
 .coach-card {
   background: rgba(0, 0, 0, 0.75);
   border-radius: 16px;
@@ -92,7 +73,6 @@
     0 12px 36px rgba(0, 0, 0, 0.65);
 }
 
-/* Coach Images */
 .img-wrap {
   display: flex;
   justify-content: center;
@@ -112,7 +92,6 @@
   transform: scale(1.06);
 }
 
-/* Text */
 .coach-name {
   font-family: 'Cinzel', serif;
   color: #f0e6d2;
@@ -146,7 +125,6 @@
   margin-bottom: 6px;
 }
 
-/* Buttons */
 .btn-more {
   background: #ffa726;
   color: #1a1a1a;
@@ -163,9 +141,6 @@
   transform: translateY(-2px);
 }
 
-/* --------------------------------
-   MODAL (kept simple and clean)
------------------------------------ */
 .modal {
   display: none;
   position: fixed;
@@ -188,11 +163,15 @@
   max-width: 850px;
   width: 100%;
   box-shadow: 0 0 35px rgba(0,0,0,0.8);
+  position: relative;
+  color: #e6e6e6;
 }
 
 .modal-body {
   display: flex;
   gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .modal-image img {
@@ -200,21 +179,75 @@
   height: 220px;
   border-radius: 12px;
   object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  flex: 1 1 340px;
+  min-width: 240px;
 }
 
 .modal-name {
   font-family: 'Cinzel', serif;
   font-size: 1.5rem;
   color: #f0e6d2;
+  margin: 0 0 6px;
+}
+
+.modal-role {
+  color: #cfc9c1;
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.modal-long-bio {
+  font-size: 0.98rem;
+  color: #d4cfc7;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.modal-specs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.modal-specs .spec-pill {
+  background: rgba(255,255,255,0.04);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #d9d3c7;
+}
+
+.modal-footer {
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:14px;
 }
 
 .modal-close {
   position: absolute;
   top: 12px;
   right: 18px;
-  font-size: 30px;
+  font-size: 28px;
   background: none;
   color: #fff;
   border: none;
   cursor: pointer;
+  line-height: 1;
+}
+
+@media (max-width:720px){
+  .modal-image img {
+    width: 100%;
+    height: 200px;
+  }
+  .modal-body {
+    flex-direction: column;
+  }
+  .modal-panel { padding: 16px; }
 }
